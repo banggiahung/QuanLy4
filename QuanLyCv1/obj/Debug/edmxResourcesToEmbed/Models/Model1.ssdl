@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ShopQuanAoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="ACOUNT">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EMAIL" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="MAT_KHAU" Type="varchar" MaxLength="250" />
+    <Property Name="LINK_ANH" Type="char" MaxLength="250" />
+    <Property Name="HO_TEN" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="PHONE" Type="char" MaxLength="12" Nullable="false" />
+    <Property Name="NGAY_DANG_KY" Type="datetime" />
+    <Property Name="DIA_CHI" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="TRANG_THAI" Type="bit" />
+    <Property Name="IS_REMOVE" Type="bit" />
+  </EntityType>
+  <EntityType Name="BAI_VIET">
+    <Key>
+      <PropertyRef Name="MA_BV" />
+    </Key>
+    <Property Name="MA_BV" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TIEU_DE" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="MO_TA" Type="nvarchar" MaxLength="255" />
+    <Property Name="SLUG" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="IMAGES" Type="varchar" MaxLength="250" />
+    <Property Name="NOI_DUNG" Type="ntext" />
+    <Property Name="NOI_BAT" Type="bit" />
+    <Property Name="TRANG_THAI" Type="bit" />
+    <Property Name="NGAY_DANG" Type="datetime" />
+    <Property Name="IS_REMOVE" Type="bit" />
+  </EntityType>
+  <EntityType Name="Loai_C_V">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="LoaiCV" Type="nchar" MaxLength="50" />
+    <Property Name="ID_LOAI" Type="int" />
+  </EntityType>
+  <EntityType Name="NhaCungCap">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenNhaCungCap" Type="nchar" MaxLength="50" />
+    <Property Name="LoaiCongViec" Type="nchar" MaxLength="50" />
+    <Property Name="TenCongViec" Type="nvarchar" MaxLength="500" />
+    <Property Name="NgayDang" Type="datetime" />
+    <Property Name="LuongBatDau" Type="float" />
+    <Property Name="TrangThai" Type="nchar" MaxLength="20" />
+    <Property Name="Status" Type="int" />
+    <Property Name="HinhAnh" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="PhanLoaiCV">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="ID_LOAI_CV" Type="int" />
+    <Property Name="GHI_CHU_LOAI" Type="nchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="SLIDE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TIEU_DE" Type="nvarchar" MaxLength="250" />
+    <Property Name="LINK" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="IMAGES" Type="varchar" MaxLength="250" />
+    <Property Name="STT" Type="tinyint" />
+    <Property Name="TRANG_THAI" Type="bit" />
+    <Property Name="NOI_BAT" Type="bit" />
+    <Property Name="NGAY_DANG" Type="datetime" />
+    <Property Name="IS_REMOVE" Type="bit" />
+  </EntityType>
+  <EntityContainer Name="ShopQuanAoModelStoreContainer">
+    <EntitySet Name="ACOUNT" EntityType="Self.ACOUNT" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BAI_VIET" EntityType="Self.BAI_VIET" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Loai_C_V" EntityType="Self.Loai_C_V" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NhaCungCap" EntityType="Self.NhaCungCap" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PhanLoaiCV" EntityType="Self.PhanLoaiCV" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SLIDE" EntityType="Self.SLIDE" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

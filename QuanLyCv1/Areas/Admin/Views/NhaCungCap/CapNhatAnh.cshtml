@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewBag.Title = "CapNhatAnh";
+    Layout = "~/Areas/Admin/Views/Shared/Layout-admin.cshtml";
+}
+
+<div class="col-md-12 pt-4">
+
+    <h2>Cập nhật hình ảnh</h2>
+
+   
+    <form method="post" enctype="multipart/form-data">
+        <input type="hidden" name="idNhaCC" value="@ViewBag.idNhaCC" />
+        <p>
+            <label>Chọn ảnh</label> <br />
+            <input type="file" name="fileAnh" />
+        </p>
+        
+        <button class="btn mt-3  btn-success">Tải ảnh lên</button>
+        <p style="color:red">
+            @ViewBag.error
+        </p>
+    </form>
+
+</div>
+

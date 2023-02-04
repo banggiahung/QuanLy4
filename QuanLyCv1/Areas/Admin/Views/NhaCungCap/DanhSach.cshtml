@@ -1,0 +1,106 @@
+﻿@model IEnumerable<QuanLyCv1.Models.NhaCungCap>
+
+@{
+    ViewBag.Title = "Danh Sách Việc Làm";
+    Layout = "~/Areas/Admin/Views/Shared/Layout-admin.cshtml";
+}
+
+
+
+<a class="btn btn-dark mb-3" href="~/Admin/NhaCungCap/ThemMoi">Thêm mới</a>
+
+
+<div class="row">
+    <div class="col-md-12">
+        <h2>Danh sách nhà cung cấp việc làm</h2>
+    </div>
+    <div class="col-md-12 mb-3">
+        <form>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control"  name="loaiCv" value="@ViewBag.loaiCv" placeholder="Tìm kiếm theo loại" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" type="button">Tìm kiếm</button>
+                </div>
+            </div>
+            
+        </form>
+    </div>
+    <div class="col-md-12">
+        <table class="table-bordered table table-light" >
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">
+                        @Html.DisplayNameFor(model => model.ID)
+                    </th>
+                    <th scope="col">
+                        Tên Nhà Cung Cấp
+                    </th>
+                    <th scope="col">
+                        Hinh ảnh nhà Cung Cấp
+                    </th>
+
+                    <th scope="col">
+                        Loại Công Việc
+                    </th>
+                    <th scope="col">
+                        Tên công việc
+                    </th>
+                    <th scope="col">
+                        Ngày bắt đầu đăng
+                    </th>
+                    <th scope="col">
+                        Lương khởi điểm
+                    </th>
+                    <th scope="col">
+                        Trạng thái
+                    </th>
+                    <th scope="col">
+                        Tùy chỉnh
+                    </th>
+                </tr>
+            </thead>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @item.ID
+                    </td>
+                    <td>
+                        <a href="/Admin/NhaCungCap/ChiTiet?id=@item.ID">@item.TenNhaCungCap</a>
+                    </td>
+
+                    <td >
+                      <img src="@item.HinhAnh" style="width:40%" height="100px" />
+                    </td>
+                    <td>
+                        @item.LoaiCongViec
+                    </td>
+                    <td>
+                        @item.TenCongViec
+                    </td>
+                    <td>
+                        @String.Format("{0:d}", item.NgayDang)
+                    </td>
+                    <td>
+                        @String.Format("{0:0,0}", item.LuongBatDau)<sup>đ</sup>
+                    </td>
+                    <td>
+                        @Html.Raw(item.Status == 0 ? " <span class='btn btn-danger'>Hết hạn</span>" : "<span class='btn btn-success'>Đang tuyển</span>")
+
+                    </td>
+                    <td>
+                        <a href="~/Admin/NhaCungCap/CapNhat?id=@item.ID">Sửa</a> |
+                        <a href="~/Admin/NhaCungCap/Xoa?id=@item.ID" style="color:red">Xóa</a>
+
+                    </td>
+                </tr>
+            }
+
+        </table>
+
+    </div>
+
+   
+
+</div>
+

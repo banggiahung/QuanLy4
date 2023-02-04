@@ -1,0 +1,109 @@
+﻿@model QuanLyCv1.Models.NhaCungCap
+
+@{
+    ViewBag.Title = "Chi Tiet San Pham";
+    Layout = "~/Areas/Admin/Views/Shared/Layout-admin.cshtml";
+}
+
+
+<div class="row">
+
+    <div class="col-md-12">
+        <h2>Chi Tiet San Pham</h2>
+
+        <h4>Nhà cung cấp số @Model.ID</h4>
+        <hr />
+
+    </div>
+    <div class="col-md-12">
+        <div class="row">
+            <div class="col-md-3">
+                <h3>Hình ảnh</h3>
+                <img src="@Model.HinhAnh" style="width:200px"/>
+                <p>
+                    <a href="/Admin/NhaCungCap/CapNhatAnh?idNhaCC=@Model.ID" class="pull-right mt-3 btn btn-danger">Tải ảnh lên</a>
+                </p>
+            </div>
+            <div class="col-md-6">
+                <h3 class="text-center">Thông tin chi tiết</h3> 
+                <table class="table table-bordered">
+                    <tr>
+
+                        <td class="h4">
+                            Tên nhà cung cấp
+                        </td>
+                        <td>
+                            @Model.TenNhaCungCap
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="h4">
+                            Loại công việc
+                        </td>
+                        <td>
+                            @Model.LoaiCongViec
+                        </td>
+                    </tr>
+
+                    <tr>
+
+                        <td class="h4">
+                            Tên công việc
+                        </td>
+                        <td>
+                            @Model.TenCongViec
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="h4">
+                            Ngày đăng
+                        </td>
+
+                        <td >
+                            @String.Format("{0:d}", Model.NgayDang)
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="h4">
+                            Lương khởi điểm
+                        </td>
+
+                        <td >
+                            @String.Format("{0:0,0}", Model.LuongBatDau)<sup>đ</sup>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="h4">
+                            Trạng thái
+                        </td>
+                        <td >
+                            @Html.Raw(Model.Status == 0 ? " <span class='btn btn-danger'>Hết hạn</span>" : "<span class='btn btn-success'>Đang tuyển</span>")
+
+                        </td>
+                    </tr>
+
+                </table>
+
+            </div>
+            <div class="col-md-3 text-center ">
+                <h3>Phân Loại Công Việc</h3> 
+                <hr />
+                <p class="text-center">
+                    <a href="#">Thêm loại công việc</a>
+                </p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<div>
+</div>
+<p>
+    <a href="~/Admin/NhaCungCap/DanhSach">Trở lại danh sách</a>
+
+</p>

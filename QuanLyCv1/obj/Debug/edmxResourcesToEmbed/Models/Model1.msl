@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ShopQuanAoModelStoreContainer" CdmEntityContainer="ShopQuanAoEntities">
+    <EntitySetMapping Name="ACOUNTs">
+      <EntityTypeMapping TypeName="ShopQuanAoModel.ACOUNT">
+        <MappingFragment StoreEntitySet="ACOUNT">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="MAT_KHAU" ColumnName="MAT_KHAU" />
+          <ScalarProperty Name="LINK_ANH" ColumnName="LINK_ANH" />
+          <ScalarProperty Name="HO_TEN" ColumnName="HO_TEN" />
+          <ScalarProperty Name="PHONE" ColumnName="PHONE" />
+          <ScalarProperty Name="NGAY_DANG_KY" ColumnName="NGAY_DANG_KY" />
+          <ScalarProperty Name="DIA_CHI" ColumnName="DIA_CHI" />
+          <ScalarProperty Name="TRANG_THAI" ColumnName="TRANG_THAI" />
+          <ScalarProperty Name="IS_REMOVE" ColumnName="IS_REMOVE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BAI_VIET">
+      <EntityTypeMapping TypeName="ShopQuanAoModel.BAI_VIET">
+        <MappingFragment StoreEntitySet="BAI_VIET">
+          <ScalarProperty Name="MA_BV" ColumnName="MA_BV" />
+          <ScalarProperty Name="TIEU_DE" ColumnName="TIEU_DE" />
+          <ScalarProperty Name="MO_TA" ColumnName="MO_TA" />
+          <ScalarProperty Name="SLUG" ColumnName="SLUG" />
+          <ScalarProperty Name="IMAGES" ColumnName="IMAGES" />
+          <ScalarProperty Name="NOI_DUNG" ColumnName="NOI_DUNG" />
+          <ScalarProperty Name="NOI_BAT" ColumnName="NOI_BAT" />
+          <ScalarProperty Name="TRANG_THAI" ColumnName="TRANG_THAI" />
+          <ScalarProperty Name="NGAY_DANG" ColumnName="NGAY_DANG" />
+          <ScalarProperty Name="IS_REMOVE" ColumnName="IS_REMOVE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Loai_C_V">
+      <EntityTypeMapping TypeName="ShopQuanAoModel.Loai_C_V">
+        <MappingFragment StoreEntitySet="Loai_C_V">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="LoaiCV" ColumnName="LoaiCV" />
+          <ScalarProperty Name="ID_LOAI" ColumnName="ID_LOAI" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NhaCungCaps">
+      <EntityTypeMapping TypeName="ShopQuanAoModel.NhaCungCap">
+        <MappingFragment StoreEntitySet="NhaCungCap">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="TenNhaCungCap" ColumnName="TenNhaCungCap" />
+          <ScalarProperty Name="LoaiCongViec" ColumnName="LoaiCongViec" />
+          <ScalarProperty Name="TenCongViec" ColumnName="TenCongViec" />
+          <ScalarProperty Name="NgayDang" ColumnName="NgayDang" />
+          <ScalarProperty Name="LuongBatDau" ColumnName="LuongBatDau" />
+          <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="HinhAnh" ColumnName="HinhAnh" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PhanLoaiCVs">
+      <EntityTypeMapping TypeName="ShopQuanAoModel.PhanLoaiCV">
+        <MappingFragment StoreEntitySet="PhanLoaiCV">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ID_LOAI_CV" ColumnName="ID_LOAI_CV" />
+          <ScalarProperty Name="GHI_CHU_LOAI" ColumnName="GHI_CHU_LOAI" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SLIDEs">
+      <EntityTypeMapping TypeName="ShopQuanAoModel.SLIDE">
+        <MappingFragment StoreEntitySet="SLIDE">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="TIEU_DE" ColumnName="TIEU_DE" />
+          <ScalarProperty Name="LINK" ColumnName="LINK" />
+          <ScalarProperty Name="IMAGES" ColumnName="IMAGES" />
+          <ScalarProperty Name="STT" ColumnName="STT" />
+          <ScalarProperty Name="TRANG_THAI" ColumnName="TRANG_THAI" />
+          <ScalarProperty Name="NOI_BAT" ColumnName="NOI_BAT" />
+          <ScalarProperty Name="NGAY_DANG" ColumnName="NGAY_DANG" />
+          <ScalarProperty Name="IS_REMOVE" ColumnName="IS_REMOVE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

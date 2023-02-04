@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ShopQuanAoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="ACOUNT">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EMAIL" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MAT_KHAU" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="LINK_ANH" Type="String" MaxLength="250" FixedLength="true" Unicode="false" />
+    <Property Name="HO_TEN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PHONE" Type="String" MaxLength="12" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="NGAY_DANG_KY" Type="DateTime" Precision="3" />
+    <Property Name="DIA_CHI" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TRANG_THAI" Type="Boolean" />
+    <Property Name="IS_REMOVE" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="BAI_VIET">
+    <Key>
+      <PropertyRef Name="MA_BV" />
+    </Key>
+    <Property Name="MA_BV" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TIEU_DE" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MO_TA" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="SLUG" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IMAGES" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="NOI_DUNG" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="NOI_BAT" Type="Boolean" />
+    <Property Name="TRANG_THAI" Type="Boolean" />
+    <Property Name="NGAY_DANG" Type="DateTime" Precision="3" />
+    <Property Name="IS_REMOVE" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="Loai_C_V">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="LoaiCV" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="ID_LOAI" Type="Int32" />
+  </EntityType>
+  <EntityType Name="NhaCungCap">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TenNhaCungCap" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="LoaiCongViec" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="TenCongViec" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="NgayDang" Type="DateTime" Precision="3" />
+    <Property Name="LuongBatDau" Type="Double" />
+    <Property Name="TrangThai" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+    <Property Name="Status" Type="Int32" />
+    <Property Name="HinhAnh" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="PhanLoaiCV">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="ID_LOAI_CV" Type="Int32" />
+    <Property Name="GHI_CHU_LOAI" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+  </EntityType>
+  <EntityType Name="SLIDE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TIEU_DE" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="LINK" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IMAGES" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="STT" Type="Byte" />
+    <Property Name="TRANG_THAI" Type="Boolean" />
+    <Property Name="NOI_BAT" Type="Boolean" />
+    <Property Name="NGAY_DANG" Type="DateTime" Precision="3" />
+    <Property Name="IS_REMOVE" Type="Boolean" />
+  </EntityType>
+  <EntityContainer Name="ShopQuanAoEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="ACOUNTs" EntityType="Self.ACOUNT" />
+    <EntitySet Name="BAI_VIET" EntityType="Self.BAI_VIET" />
+    <EntitySet Name="Loai_C_V" EntityType="Self.Loai_C_V" />
+    <EntitySet Name="NhaCungCaps" EntityType="Self.NhaCungCap" />
+    <EntitySet Name="PhanLoaiCVs" EntityType="Self.PhanLoaiCV" />
+    <EntitySet Name="SLIDEs" EntityType="Self.SLIDE" />
+  </EntityContainer>
+</Schema>
